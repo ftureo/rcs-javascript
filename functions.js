@@ -62,5 +62,73 @@ printInConsole("Aguante la 38i")
 //     // Block of code to execute
 //     // Los paréntesis no siempre son necesarios en los parametros y las llaves no siempre son necesarias para el    bloque de código a ejecutar
 // }
+// Las funciones flecha tienen un retorno implicito para una ejecución de una línea - COntinuará...()
 
-const printInConsoleArrowFunction = () => console.log("Vamos a renderizar este mensaje")
+const printInConsoleArrowFunction = (message) => console.log(message);
+
+printInConsoleArrowFunction("Vamos a renderizar este mensaje")
+printInConsoleArrowFunction("Aguante la 38i desde Arrow Function")
+
+const suma = 2 + 3 
+console.log(suma)
+const sum1 = 3 + 5
+console.log(sum1)
+const sum2 = 4 + 6
+console.log(sum2)
+
+
+// Voy a intentar encontrar una forma más eficiente de resolver cualquier suma que me pidan
+// Voy a usar una funcion
+
+// Veamos el algoritmo para resolver una suma a través de una función
+
+// 1. Definir la función en el formato regular function
+// 1.1 Llamar a la palabra reservada Function ✔️
+// 1.2 Definir un nombre apropiado - Preferentemente en inglés ✔️
+// 1.3 Escribir los paréntesis característicos de la función ✔️
+// 1.4 Escribir las llaves que definen el bloque de código a ejecutar ✔️
+
+// 2. Definir los pasos para resolver una suma de dos números
+// 2.1 Tener un primer número
+// 2.2 Tener un segundo número
+// 2.3 Asegurarme de que entre ellos dos exista el signo "+" para realizar la realizar la operación aritmética
+// 2.4 Realizar la operación aritmética
+
+
+// 3. ¿Cómo hace nuestra función para resolver la suma?
+// 3.1 Nombrar "n1" al primer parámetro y deben ser de tipo numérico
+// 3.2 Nombrar "n2" al segundo parámetro y deben ser de tipo numérico
+// 3.3 Realizar la operación aritmética asegurándome de usar el signo "+" entre n1 y n2
+// 3.4 Llamar a console.log y envolver n1+n2 // ¿Es el único camino?
+
+// 4. ¿Cómo hago para que la función "sum" realice efectivamente una suma?
+// 4.1 Invoco a la función llamándola por su nombre de referencia seguido de ()
+// 4.2 Le paso DOS parámetros asegurándome de que sean números. Luego los validaremos en la función (MVP2)
+
+
+// // Opción #1 - Escribiendo el console.log como parte del statement de la función. 
+// function sum(n1, n2){
+//     console.log(n1 + n2)
+// }
+// sum(1, 3);
+
+
+// Opción #2 - Escribiendo el primer retorno
+// Pero si llamo a console.log(sum(n1, n2) me tira undefined)
+function sum(n1, n2){
+    console.log("Estoy en la suma")
+    // console.log("typeof n1", typeof n1)
+    // if(typeof n1 === "string" ){
+    //     alert("Me ingresaste un string")
+    // } WIP - Terminar de resolver el algorito
+    // n1 + n2 // Esto, en principio, genera un undefined
+    return n1 + n2 // Esto ahora me muestra el resultado correcto
+}
+
+console.log(sum(1, 3)); // Output expected: 4
+console.log(sum(2, 4)) // Output expected: 6
+console.log(sum(3, 5)) // Output expected: 8
+
+// Tarea: Validar que realice una aritmética
+console.log(sum(6, "perrito"))
+console.log(sum("perrito", 6))
