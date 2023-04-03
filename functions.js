@@ -13,6 +13,7 @@ console.log("Functions Working")
 // Ejemplo utilizando la palabra function
 // Defino qué va a hacer esa función: Imprimir un mensaje en consola que "Hello World from a function"
 
+// Regular Function 
 // function nameFunction(parameter1, parameter2, ..., parameterN){
 //     // Block of code to execute
 // }
@@ -24,7 +25,7 @@ console.log("Functions Working")
 //     console.log("Hello World from a function");
 // }
 
-// console.log("Está funcionando?")
+// // console.log("Está funcionando?")
 
 // // Para que se ejecute la función y se ejecute su bloque de código, debemos invocarla a través de su nombre y colocando ()
 // // Llamo a la función printHelloWorld
@@ -39,6 +40,8 @@ console.log("Functions Working")
 // Hacer el código de arriba no sería una buena práctica. 
 // Entonces hacemos una función que reciba por parámetro el texto a mostrar, de esta forma no tengo que escribir una para Hello y otra para Bye, simplemente invoco a la función pasándole por parámetro el mensaje que quiero
 
+// Regular Function 
+
 function printInConsole(message) {
     console.log(message)
 }
@@ -49,3 +52,15 @@ printInConsole("Hello World from a function")
 printInConsole("Bye World from a function")
 // Quiero ver el mensaje "Aguante la 38i"
 printInConsole("Aguante la 38i")
+
+
+// Arrow Function
+// Definir el tipo de variable, recomendado como siempre: const
+// Como a todas las variables de tipo const, la declaramos, le asignamos un nombre y la inicializamos. 
+// La flecha refiere al símbolo que se crea utilizando un "=" seguido de un bracket ">", conformando => 
+// const nameFunction = (parameter1, parameter2, ..., parameterN) => {
+//     // Block of code to execute
+//     // Los paréntesis no siempre son necesarios en los parametros y las llaves no siempre son necesarias para el    bloque de código a ejecutar
+// }
+
+const printInConsoleArrowFunction = () => console.log("Vamos a renderizar este mensaje")
