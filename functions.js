@@ -113,70 +113,122 @@ console.log(sum2)
 // sum(1, 3);
 
 
-// Opción #2 - Escribiendo el primer retorno
-// Pero si llamo a console.log(sum(n1, n2) me tira undefined)
-function sum(n1, n2){
-    console.log("Estoy en la suma")
-    // console.log("typeof n1", typeof n1)
-    // if(typeof n1 === "string" ){
-    //     alert("Me ingresaste un string")
-    // } WIP - Terminar de resolver el algorito
-    // n1 + n2 // Esto, en principio, genera un undefined
-    return n1 + n2 // Esto ahora me muestra el resultado correcto
+// // Opción #2 - Escribiendo el primer retorno
+// // Pero si llamo a console.log(sum(n1, n2) me tira undefined)
+// function sum(n1, n2){
+//     console.log("Estoy en la suma")
+//     // console.log("typeof n1", typeof n1)
+//     // if(typeof n1 === "string" ){
+//     //     alert("Me ingresaste un string")
+//     // } WIP - Terminar de resolver el algorito
+//     // n1 + n2 // Esto, en principio, genera un undefined
+//     return n1 + n2 // Esto ahora me muestra el resultado correcto
+// }
+
+// console.log(sum(1, 3)); // Output expected: 4
+// console.log(sum(2, 4)) // Output expected: 6
+// console.log(sum(3, 5)) // Output expected: 8
+
+// // Tarea: Validar que realice una aritmética
+// console.log(sum(6, "perrito"))
+// console.log(sum("perrito", 6))
+
+// // Puedo utilizar un retorno implícito
+// const sumArrowFunction = (a, b) => a + b
+
+// console.log(sumArrowFunction(11, 33)); // Output expected: 44
+// console.log(sumArrowFunction(45, 65)) // Output expected: 110
+
+// // function substract(n1, n2) {
+// //     return n1 - n2
+// // }
+// const substract = (a, b) => a - b
+
+// console.log(substract(31, 12)) // Output: 19
+// console.log(sum(31, 12)) // Output: 43
+
+// const multiply = (a, b) => a * b
+
+// console.log("Multiplicación: ", multiply(3, 4)) // Output: 12
+// console.log("Suma: ", sum(3, 4)); // Output: 7
+// console.log("Resta: ", substract(3, 4)); // Output: -1
+
+// const divide = (a, b) => a / b // Recordar que b no puede ser 0 (En el caso de los números reales)
+
+// console.log("División: ", divide(2, 4)) // Output: 1/2 - 0.5
+
+// // Tarea Division 1: Limitar aquellos resultados con muchos decimales a 2, 3 y 4 decimales
+// // Para el 2, vamos a usar el caso x.x.2
+// // Para el 3, vamos a usar el caso x.x.3
+// // Para el 4, vamos a usar el caso x.x.4
+
+// // Tarea Division 1.1: Redondear hacia arriba
+// // Tarea Division 1.2: Redondear hacia abajo
+// // Tarea Division 1.3: Truncar en la cantidad solicitada 
+
+// console.log("División: ", divide(354, 547)) // Output: 0.6471663619744058
+
+// // Output para 1.1.2: 0,65
+// // Output para 1.2.2: 0.64
+// // Output para 1.3.2: 0.64
+
+// // Output para 1.1.3: 0.647
+// // Output para 1.2.3: 0.646
+// // Output para 1.3.3: 0.647
+
+// console.log("División: ", divide(100, 0))
+
+// // Tarea Division 2: Validar que el segundo parámetro sea distinto de 0
+
+const sum = (a, b) => a + b
+const substract = (a, b) => a - b
+const multiply = (a, b) => a * b
+const divide = (a, b) => a / b // Recordar sobre el valor 
+
+
+function calculateOperation(a, b, operation) {
+    switch (operation) {
+        case "+":
+            return a + b;
+        case "-":
+            return a - b;
+        case "*":
+            return a * b;
+        case "/":
+            return a / b;
+        case "^":
+            return Math.pow(a, b);
+        default:
+            return "Invalid operation";
+    }
 }
 
-console.log(sum(1, 3)); // Output expected: 4
-console.log(sum(2, 4)) // Output expected: 6
-console.log(sum(3, 5)) // Output expected: 8
+// Repasar lo que es una "Potencia" en matemática
+// 2^3 = 2 * 2 * 2 - 8 - En este caso el 2 representa a la base y el 3 representa a la potencia.
+// 3^2 = 3 * 3 - 9
+// 4^5 = 4 * 4 * 4 * 4 * 4 - 
 
-// Tarea: Validar que realice una aritmética
-console.log(sum(6, "perrito"))
-console.log(sum("perrito", 6))
+console.log("Suma en calculateOperation", calculateOperation(2, 3, "+"))
+// a = 2
+// b = 3
+// operation = "+"
 
-// Puedo utilizar un retorno implícito
-const sumArrowFunction = (a, b) => a + b
+console.log("Resta en calculateOperation", calculateOperation(2, 3, "-"));
+// a = 2
+// b = 3
+// operation = "-"
 
-console.log(sumArrowFunction(11, 33)); // Output expected: 44
-console.log(sumArrowFunction(45, 65)) // Output expected: 110
+console.log("Multiplicación en calculateOperation", calculateOperation(2, 3, "*"));
+// a = 2
+// b = 3
+// operation = "*"
 
-// function substract(n1, n2) {
-//     return n1 - n2
-// }
-const substract = (a, b) => a - b
+console.log("División en calculateOperation", calculateOperation(2, 3, "/"));
+// a = 2
+// b = 3
+// operation = "/"
 
-console.log(substract(31, 12)) // Output: 19
-console.log(sum(31, 12)) // Output: 43
-
-const multiply = (a, b) => a * b
-
-console.log("Multiplicación: ", multiply(3, 4)) // Output: 12
-console.log("Suma: ", sum(3, 4)); // Output: 7
-console.log("Resta: ", substract(3, 4)); // Output: -1
-
-const divide = (a, b) => a / b // Recordar que b no puede ser 0 (En el caso de los números reales)
-
-console.log("División: ", divide(2, 4)) // Output: 1/2 - 0.5
-
-// Tarea Division 1: Limitar aquellos resultados con muchos decimales a 2, 3 y 4 decimales
-// Para el 2, vamos a usar el caso x.x.2
-// Para el 3, vamos a usar el caso x.x.3
-// Para el 4, vamos a usar el caso x.x.4
-
-// Tarea Division 1.1: Redondear hacia arriba
-// Tarea Division 1.2: Redondear hacia abajo
-// Tarea Division 1.3: Truncar en la cantidad solicitada 
-
-console.log("División: ", divide(354, 547)) // Output: 0.6471663619744058
-
-// Output para 1.1.2: 0,65
-// Output para 1.2.2: 0.64
-// Output para 1.3.2: 0.64
-
-// Output para 1.1.3: 0.647
-// Output para 1.2.3: 0.646
-// Output para 1.3.3: 0.647
-
-console.log("División: ", divide(100, 0))
-
-// Tarea Division 2: Validar que el segundo parámetro sea distinto de 0
-
+console.log("Potencia en calculateOperation", calculateOperation(2, 3, "^"));
+// a = 2
+// b = 3
+// operation = "^"
