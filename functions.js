@@ -132,3 +132,51 @@ console.log(sum(3, 5)) // Output expected: 8
 // Tarea: Validar que realice una aritmética
 console.log(sum(6, "perrito"))
 console.log(sum("perrito", 6))
+
+// Puedo utilizar un retorno implícito
+const sumArrowFunction = (a, b) => a + b
+
+console.log(sumArrowFunction(11, 33)); // Output expected: 44
+console.log(sumArrowFunction(45, 65)) // Output expected: 110
+
+// function substract(n1, n2) {
+//     return n1 - n2
+// }
+const substract = (a, b) => a - b
+
+console.log(substract(31, 12)) // Output: 19
+console.log(sum(31, 12)) // Output: 43
+
+const multiply = (a, b) => a * b
+
+console.log("Multiplicación: ", multiply(3, 4)) // Output: 12
+console.log("Suma: ", sum(3, 4)); // Output: 7
+console.log("Resta: ", substract(3, 4)); // Output: -1
+
+const divide = (a, b) => a / b // Recordar que b no puede ser 0 (En el caso de los números reales)
+
+console.log("División: ", divide(2, 4)) // Output: 1/2 - 0.5
+
+// Tarea Division 1: Limitar aquellos resultados con muchos decimales a 2, 3 y 4 decimales
+// Para el 2, vamos a usar el caso x.x.2
+// Para el 3, vamos a usar el caso x.x.3
+// Para el 4, vamos a usar el caso x.x.4
+
+// Tarea Division 1.1: Redondear hacia arriba
+// Tarea Division 1.2: Redondear hacia abajo
+// Tarea Division 1.3: Truncar en la cantidad solicitada 
+
+console.log("División: ", divide(354, 547)) // Output: 0.6471663619744058
+
+// Output para 1.1.2: 0,65
+// Output para 1.2.2: 0.64
+// Output para 1.3.2: 0.64
+
+// Output para 1.1.3: 0.647
+// Output para 1.2.3: 0.646
+// Output para 1.3.3: 0.647
+
+console.log("División: ", divide(100, 0))
+
+// Tarea Division 2: Validar que el segundo parámetro sea distinto de 0
+
