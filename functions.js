@@ -323,3 +323,129 @@ const transformTextToSlug = (text) => {
 };
 
 console.log(transformTextToSlug(textToTransform));
+
+
+// Resolviendo los snippets de Slack
+// Ejercicio #1
+// Nombre de la función: isPalindrome
+// ¿El nombre nos aporta algo de información? Sí,y encima, al utilizar el "is" por delante, nos indica que la función nos va a devolver un valor booleano, es decir, un true o un false
+// ¿Qué parámetros recibe? Recibe un string - Ejemplo: "anita lava la tina" - Por lo tanto, cuando invoque a la función, debo pasar una cadena de texto (string) como parámetro. 
+
+// function isPalindrome(string){
+//     return string === string.split("").reverse().join("")
+// }
+
+// console.log(isPalindrome("anita lava la tina")) // Output: True
+// console.log(isPalindrome("hello")) // Output: False
+
+
+function isPalindrome(string) {
+    const stringSpliteada = string.split("")
+    console.log({stringSpliteada}) // Output: ARRAY con todos los caracteres. 
+    const stringRevertida = stringSpliteada.reverse()
+    console.log({stringRevertida})
+    const stringJoineadaParaRetornar = stringRevertida.join("")
+    console.log({stringJoineadaParaRetornar})
+
+    return string === stringJoineadaParaRetornar // Con palabras únicas esto funciona pero no con frases... A MENOS QUEEEEEE...
+
+    // 1. Tratar el string de entrada para quitar los espacios. "esta frase" queda como "estafrase"
+    // 2. Tratar el string de entrada para que todos los caracteres sean minúsculas o mayúsculas. "ESTAfrase" queda como "estafrase" o "ESTAFRASE"
+    // 3. Antes de retornar me aseguro que el resultado final tampoco tenga esos espacios
+
+    // return string === string.split("").reverse().join("");
+}
+
+
+// console.log(isPalindrome("anita lava la tina")) // Output: True
+console.log(isPalindrome("neuquen"))
+
+// Tarea: Hacer una explicación similar con el Ejercicio #2 de Slack
+
+// Funciones de Orden Superior. 
+
+const stringsArray = [
+    "Belu está en el grupo 4",
+    "Leo",
+    "Cari",
+    "Luis",
+    "Javascript is awesome ✔️",
+    "React is awesome ✔️",
+    "Node is awesome ✔️",
+];
+
+console.log({stringsArray})
+
+// Ejemplo de un for
+for (let i = 0; i < stringsArray.length; i++) {
+    console.log(stringsArray[i]);
+}
+
+// Ejemplo de un forEach
+stringsArray.forEach((string) => console.log("forEach", string))
+
+const animals = [
+    "dog",
+    "Cat",
+    "fish",
+    "bird",
+    "snake",
+    "bear"
+]
+
+animals.forEach(animal => console.log(animal))
+
+// Cuatro funciones de orden superior SUPER SUPER SUUUUUUUUPER UTILES: Map, Filter, Reduce, Find
+// Ejemplo con map - Itera cada elemento de un iterable y me brinda la posibilidad de retornar un nuevo array lo cual es útil porque es NO DESTRUCTIVO
+
+const animalsWithStar = animals.map((animal) => {
+    return `${animal} 🌟`
+})
+console.log({animalsWithStar})
+
+const animalsObjects = animals.map((animal, index) => {
+    console.log("animal", animal)
+    console.log("index", index)
+
+    return {
+        id: index,
+        name: animal
+    }
+})
+
+console.log({animalsObjects})
+
+
+// Ejemplo con filter - Itera cada elemento de un iterable y me brinda la posibilidad de retornar un nuevo array con los elementos que cumplan con la condición que le pase como parámetro.
+
+const animalsFiltered = animals.filter(animal => animal.toLowerCase() === "cat")
+// "dog" === "cat" // False
+// "cat" === "cat" // True
+// "fish" === "cat" // False
+// "bird" === "cat" // False
+// "snake" === "cat" // False
+console.log({animalsFiltered})
+
+const numbersToFilter = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+]
+
+// 2/2 = 1 - Resto: 0
+// 3/2 = 1 - Resto: 1
+// 4/2 = 2 - Resto: 0
+// 5/2 = 2 - Resto: 1
+// 6/2 = 3 - Resto: 0
+
+const evenNumbers = numbersToFilter.filter(number => number % 2 === 0)
+console.log({evenNumbers})
+
+const notEvenNumbers = numbersToFilter.filter(number => number % 2 !== 0)
+console.log({notEvenNumbers})
+
+// Tarea: Buscar cómo funciona Find y Some.
+
