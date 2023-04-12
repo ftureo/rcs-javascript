@@ -449,3 +449,100 @@ console.log({notEvenNumbers})
 
 // Tarea: Buscar cómo funciona Find y Some.
 
+
+const developers = [
+    {
+        name: "Juan",
+        profileLinkedIn: "url Linkedin",
+        profileGithub: "url github",
+        photoProfile: "...url de foto",
+    },
+    {
+        name: "Marge",
+        profileLinkedIn: "url Linkedin",
+        profileGithub: "url github",
+        photoProfile: "...url de foto",
+    },
+    {
+        name: "Bart",
+        profileLinkedIn: "url Linkedin",
+        profileGithub: "url github",
+        photoProfile: "...url de foto",
+    },
+];
+
+developers.forEach((developer) => console.log(developer));
+// acá devolvemos el DOM de manera dinámica
+
+const products = [
+    {
+        name: "Coca Cola",
+        price: 100,
+        description: "Bebida gaseosa",
+        image: "https://www.coca-cola.com/content/dam/journey/us/en/private/2020/01/2020-01-08-coca-cola-zero-sugar-1.jpg",
+    },
+];
+
+// Agregar el número de ID a los developers de manera dinámica utilizando un .map()
+
+const developersWithIndex = developers.map((developer, index) => {
+    return {
+        // name: developer.name,
+        // profileLinkedIn: developer.profileLinkedIn,
+        // profileGithub: developer.profileGithub,
+        // photoProfile: developer.photoProfile,
+        // Con esto copiamos todas las propiedades que habían en developer
+        ...developer,
+        // id: Math.random() * 1000, // Asignamos un ID de manera Random por cada usuario.
+        id: index + 1,
+    };
+});
+
+console.log({ developersWithIndex });
+
+const arrayAnimals1 = ["dog", "cat"];
+const arrayAnimals2 = ["fish", "bear"];
+const arrayAnimals3 = ["mouse"];
+
+// const resultArrays = arrayAnimals1.concat(arrayAnimals2, arrayAnimals3)
+
+// const total = resultArrays.concat(arrayAnimals3)
+
+// console.log(total) // Atención a "mouse" - ver grabación
+// console.log(resultArrays)
+
+// Método de propagación o Spread Operator
+
+const arraySpreadOperator = [
+    ...arrayAnimals1,
+    ...arrayAnimals2,
+    ...arrayAnimals3,
+];
+// const arraySpreadOperator = ["dog", "cat"]; // 1° Luego de ...arrayAnimals1
+// const arraySpreadOperator = ["dog", "cat", "fish", "bear"]; // 2° Luego de ...arrayAnimals2
+// const arraySpreadOperator = ["dog", "cat", "fish", "bear", "mouse"]; // 3° Luego de ...arrayAnimal3
+
+console.log({ arraySpreadOperator });
+
+const objectUser = {
+    name: "Juan",
+    profileLinkedIn: "url Linkedin",
+    profileGithub: "url github",
+    photoProfile: "...url de foto",
+};
+
+console.log({ objectUser });
+
+// // Cuando yo quiera agregar una clave, debería hacer object.newKey = newValue
+
+// objectUser.id = 1
+
+// console.log({objectUser})
+
+// Cómo puedo hacer para agregar una nueva clave a un objeto con el Spread Operator?
+
+const objectUserWithID = {
+    ...objectUser,
+    id: 1,
+};
+console.log({ objectUserWithID });
