@@ -18,3 +18,24 @@ buttonIncrement.addEventListener("click", (event) => {
 });
 
 // TODO: Desarrollar el botón de resta y que actualice lo que vemos en la pantalla
+
+
+const inputName = document.getElementById("input-text")
+console.log(inputName);
+const form = document.getElementById("form")
+const inputContent = document.getElementById("input-content")
+
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    console.log("Estamos en el evento del form")
+})
+
+inputName.addEventListener("change", (event => {
+    console.log(event)
+    console.log("change")
+
+    console.log(event.target.value)
+    inputContent.textContent = event.target.value
+}))
+
