@@ -471,6 +471,49 @@ const developers = [
     },
 ];
 
+// Seteamos en LocalStorage
+localStorage.setItem("Developers", JSON.stringify(developers))
+// localStorage.setItem("Developers", "Perrito"); // Esto sobreescribe la key "Developers"
+
+
+// const cart = [{},{},{}]
+
+// // Quiero agregar un nuevo producto al carrito
+// // Acá utilizo el spread operator para no pisar el array original
+// const newCart = [...cart, newItem]
+
+// const newItem = {
+//     id:"",
+//     price: "",
+//     description
+// }
+// //Output: [{},{},{},{}]
+
+// const renderCartExplained = () => {
+//     const cart = JSON.parse(localStorage.getItem("cart"));
+
+//     const cartContainer = document.getElementById("cart-container");
+
+//     // Itero el array de cart
+//     // Create que correspondan
+//     // AppendChild que correspondan
+//     // InnerHTML que correspondan
+
+
+// }
+
+// Recuperamos de LocalStorage
+const responseFromLocalStorage = localStorage.getItem("Developers")
+console.log("Parseamos", JSON.parse(responseFromLocalStorage))
+
+
+// Cuando el usuario haga click en "Pagar", al no usar pasarela de pagos, ejecutamos un removeItem para borrar ese cart del LocalStorage
+
+// localStorage.removeItem("Developers");
+localStorage.clear() // Esto borra todo el LocalStorage
+
+
+
 developers.forEach((developer) => console.log(developer));
 // acá devolvemos el DOM de manera dinámica
 
