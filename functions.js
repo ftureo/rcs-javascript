@@ -529,6 +529,7 @@ const products = [
 // Agregar el número de ID a los developers de manera dinámica utilizando un .map()
 
 const developersWithIndex = developers.map((developer, index) => {
+    console.log({developer})
     return {
         // name: developer.name,
         // profileLinkedIn: developer.profileLinkedIn,

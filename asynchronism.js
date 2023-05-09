@@ -94,7 +94,7 @@ setTimeout(function () {
 
 // const API_URL = "https://fakestoreapi.com/products"
 
-// Vamos a obtener los productos de la API FakeStoreAPI a través de los mecanismos que nos ofrece JS
+// // Vamos a obtener los productos de la API FakeStoreAPI a través de los mecanismos que nos ofrece JS
 
 // const getProducts = () => {
 //     // Vamos a hacer la petición a través de fetch y como parámetro le pasamos la URL de la API que queremos consultar
@@ -103,8 +103,8 @@ setTimeout(function () {
 //         // Una promesa es un objeto que representa un valor que estará disponible en algún momento en el futuro
 //         // El método then() nos permite ejecutar una función cuando la promesa se resuelve
 //         fetch(API_URL)
-//             .then(response => response.json()) // .json() también me devuelve una promesa entonces, vuelvo a utilizar .then()
-//             .then(data => paintDOM(data)) // Lo muestro por consola o lo tomo como parametro para llamar a una función que pinte el DOM
+//             .then((response) => response.json()) // .json() también me devuelve una promesa entonces, vuelvo a utilizar .then()
+//             .then((data) => paintDOM(data)) // Lo muestro por consola o lo tomo como parametro para llamar a una función que pinte el DOM
 // }
 // getProducts()
 
@@ -136,3 +136,75 @@ getData(API_URL_POSTS_JSONPLACEHOLDER)
 getData(API_URL_USERS_JSONPLACEHOLDER)
 getData(API_URL_USERS_FAKESTOREAPI)
 getData(API_URL_PRODUCTS_FAKESTOREAPI)
+
+
+// ASYNC / AWAIT
+const getProductsAsyncAwait = async () => {
+    const response = await fetch(API_URL_USERS_JSONPLACEHOLDER)
+    // console.log({ response }) // { response: Promise { <pending> } }
+    console.log({ response })
+    const data = await response.json();
+    console.log({ data })
+    // return data
+
+};
+
+// console.log(getProductsAsyncAwait());
+
+
+const getDataAsyncAwait = async(API_URL) => {
+
+    const infoUsers = [{name: "Fabi"}, {name: "Samir"}, {name: "Luis"}]
+    console.log({ infoUsers })
+
+    const response = await fetch(API_URL)
+    const data = await response.json();
+    console.log({ data })
+    
+    return data
+}
+
+console.log(getDataAsyncAwait(API_URL_POSTS_JSONPLACEHOLDER)) // TODO: Por qué me devuelve una promesa pendiente?
+
+// Implementing try / catch
+const getProductsAsyncAwaitUsers = async () => {
+    try{
+        const response = await fetch(API_URL_USERS_JSONPLACEHOLDER)
+        const data = await response.json();
+        console.log({ data })
+        return data
+    } catch (error){
+        alert("Error al obtener los usuarios")
+        console.error({ error })
+        throw new Error("Error al obtener los usuarios")
+        // Obtener el status de error y en base a eso preparar una UI para mostrar el error
+    }
+}
+
+// Implementing try / finally
+// const getProductsAsyncAwaitUsers = async () => {
+//     try {
+//         const response = await fetch(API_URL_USERS_JSONPLACEHOLDER);
+//         const data = await response.json();
+//         console.log({ data });
+//         return data;
+//     } finally {
+//         console.log("Finally")
+//     }
+//     // El Finally se ejecuta siempre, tanto si la promesa se resuelve como si no se resuelve
+// };
+
+// Implementing try / catch / finally
+// const getProductsAsyncAwaitUsers = async () => {
+//     try{
+//         const response = await fetch(API_URL_USERS_JSONPLACEHOLDER)
+//         const data = await response.json();
+//         console.log({ data })
+//         return data
+//     } catch (error){
+//         console.error({ error })
+//         // Obtener el status de error y en base a eso preparar una UI para mostrar el error
+//     } finally {
+//         console.log("Finally After Try-Catch")
+//     }
+// }
